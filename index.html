@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <main>
+        <div id="startPage">
+            <h1 class="quizHead">Coding Quiz Challenge!</h1>
+                <p>Try to answer these sports questions within the time limit. Incorrect answers will penalize your scoretime by 12 seconds!
+                </p>
+        
+            <div id="startBtn">
+                <button class="buttons">Start Quiz</button>
+            </div>
+        </div>
+        
+        <div class="questionSection">
+            <h1 class="questionHead" ></h1>
+                <ul class="qList">
+                    <li><button class="buttons answer1"></button></li>
+                    <li><button class="buttons answer2"></button></li>
+                    <li><button class="buttons answer3"></button></li><!--correct-->
+                    <li><button class="buttons answer4"></button></li>
+                </ul>
+        </div>
+        <div id="post-game">
+            <h1>Finished</h1>
+            <p><span id="score"></span></p>
+            <p>Enter initials:
+                <input type="text" class="initials" id="initialsEntry">
+                <button class="buttons" id="submitBtn">Submit</button>
+            </p>
+        </div>
+        <div id="highscorePage">
+            <h1>Highscores</h1>
+            <div id="highscores"></div>
+            <button id="goBack" class="buttons">Go Back</button>
+            <button id="clearHighscores" class="buttons">Clear Highscores</button>
+        </div>
+    </main> 
+</body>
+<script src = "script.js"></script>
+</html>
