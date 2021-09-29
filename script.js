@@ -71,6 +71,15 @@ startBtn.addEventListener ("click", startQuiz);
 function startQuiz(){
     console.log("start the quiz");
     startPage.style.display = "none";
-    renderQuestions();
+    questionPage.style.display = "initial";
+    questionRender();
     // qTime();
 }
+function questionRender() {
+    question.textContent = questionArr[arrNum].question;
+    answer1.textContent = questionArr[arrNum].answer1;
+    answer2.textContent = questionArr[arrNum].answer2;
+    answer3.textContent = questionArr[arrNum].answer3;
+    answer4.textContent = questionArr[arrNum].answer4;
+    correctAnswer = questionArr[arrNum].correctAnswer;
+  }
