@@ -9,9 +9,10 @@ var answer3 = document.querySelector(".answer3");
 var answer4 = document.querySelector(".answer4");
 var postGamePage = document.querySelector("#postgamepage");
 var score = document.querySelector("#score");
-var submitBtn = document.querySelector("#submitbtn");
+var submitBtn = document.querySelector("#submissionbtn");
 var highScorePage = document.querySelector("#highscorepage");
 var arrNum = 0;
+var timeLeft= document.querySelector("#timeleft");
 
 questionPage.style.display = "none"
 postGamePage.style.display = "none"
@@ -83,3 +84,39 @@ function questionRender() {
     answer4.textContent = questionArr[arrNum].answer4;
     correctAnswer = questionArr[arrNum].correctAnswer;
   }
+
+//   answers.addEventListener("click", function(event){
+//       var userAnswer = event.target;
+//       if (userAnswer == correctAnswer) {
+//           arrNum++;
+//           console.log ("correct");
+//           if (arrNum<questionArr.length){
+//               else {
+//                   timerCount = timerCount - 12
+//               }
+//           }
+//       }
+//   }
+//   )
+
+  
+// function countdown() {
+  
+//     var timeInterval = setInterval(function () {
+//       if (timeLeft > 1) {
+        
+//         time.textContent = timeLeft + ' seconds remaining';
+//         timeLeft--;
+//       } else if (timeLeft === 1) {
+//         // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
+//         timer.textContent = timeLeft + ' second remaining';
+//         timeLeft--;
+//       } else {
+//         // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+//         timertime.textContent = '';
+       
+//         clearInterval(timeInterval);
+        
+//       }
+//     }, 1200);
+//   }

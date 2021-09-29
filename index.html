@@ -7,6 +7,10 @@
     <title>Quiz</title>
 </head>
 <body>
+    <!-- <header>
+       
+         <span id="time">Time: <span id="timeleft">60</span></span>
+    </header> -->
     <main>
         <div id="startpage">
             <h1 class="quizhead">Quiz Challenge!</h1>
@@ -20,19 +24,21 @@
         
         <div class="questionpage">
             <h1 class="question" ></h1>
+            <div id = "answers">
                 <ul class="qList">
-                    <li><button class="buttons answer1"></button></li>
-                    <li><button class="buttons answer2"></button></li>
-                    <li><button class="buttons answer3"></button></li>
-                    <li><button class="buttons answer4"></button></li>
+                    <li><button class="answer1"></button></li>
+                    <li><button class="answer2"></button></li>
+                    <li><button class="answer3"></button></li>
+                    <li><button class="answer4"></button></li>
                 </ul>
+            </div>
         </div>
         <div id="postgamepage">
             <h1>Finished</h1>
             <p><span id="score"></span></p>
             <p>Enter nickname:
                 <input type="text" class="nickname" id="nicknameform">
-                <button class="buttons" id="submitbtn">Submit</button>
+                <button id="submissionbtn">Submit</button>
             </p>
         </div>
         <div id="highscorepage">
