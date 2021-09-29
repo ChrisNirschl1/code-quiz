@@ -1,39 +1,76 @@
-var startPage =document.querySelector(".startpage");
+var startPage = document.querySelector("#startpage");
+var quizHead = document.querySelector(".quizhead");
+var startBtn = document.querySelector("#startBtn");
+var questionPage = document.querySelector (".questionpage");
+var question = document.querySelector (".question");
+var answer1 = document.querySelector(".answer1");
+var answer2 = document.querySelector(".answer2");
+var answer3 = document.querySelector(".answer3");
+var answer4 = document.querySelector(".answer4");
+var postGamePage = document.querySelector("#postgamepage");
+var score = document.querySelector("#score");
+var submitBtn = document.querySelector("#submitbtn");
+var highScorePage = document.querySelector("#highscorepage");
+var arrNum = 0;
+
+questionPage.style.display = "none"
+postGamePage.style.display = "none"
+highScorePage.style.display = "none"
 
 
-var questionArr = [
+
+const questionArr = [
     {
-        question1 : "Who is the Chicago Bears starting QB",
-        answer11 : "Patrick Mahomes",
-        answer12 : "Deshaun Watson",
-        answer13 : "Mitchell Truisky",
-        answer14 : "None of the above",
-        correct1 : "answer14" 
-    }
-    {
-        question2 : "What Country dominated the 2021 Ryder Cup",
-        answer21 : "Europe",
-        answer22 : "Spain",
-        answer23 : "Russia",
-        answer24 : "America",
-        correct2 : "answer24"
+        question: "Best player?",
+        answer1: "Tom Brady",
+        answer2: "Drew Brees",
+        answer3: "Payton Manning",
+        answer4: "Tyrod Taylor",
+        correctAnswer: "Tom Brady",
+      },
+    
+      {
+        question: "Best Team?",
+        answer1: "Pats",
+        answer2: "Colts",
+        answer3: "Jags",
+        answer4: "Eagles",
+        correctAnswer: "Pats",
+      },
+    
+      {
+        question: "Best Player?",
+        answer1: "Lebron",
+        answer2: "MJ",
+        answer3: "Kobe",
+        answer4: "Tatum",
+        correctAnswer: "Lebron",
+      },
+    
+      {
+        question: "Best Team?",
+        answer1: "Celts",
+        answer2: "Yanks",
+        answer3: "Titans",
+        answer4: "Archers",
+        correctAnswer: "Celts",
+      },
+    
+      {
+        question: "Last major chip?",
+        answer1: "Baseball",
+        answer2: "Football",
+        answer3: "Hockey",
+        answer4: "Basketball",
+        correctAnswer: "Basketball",
+      },
+    ];
 
-    }
-    {
-        question3 : "First Covid positive NBA player?",
-        answer31 : "Rudy Gobert",
-        answer32 : "Mike Conley",
-        answer33 : "Jeff Teague",
-        answer34: "Kevin Durant",
-    }
-]
+startBtn.addEventListener ("click", startQuiz);
 
-
-
-function startGame() {
-    isWin = false;
-    timerCount = 10;
-    startButton.disabled = true;
-    renderBlanks()
-    startTimer()
-  }
+function startQuiz(){
+    console.log("start the quiz");
+    startPage.style.display = "none";
+    renderQuestions();
+    // qTime();
+}
