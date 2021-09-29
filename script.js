@@ -1,3 +1,4 @@
+//Called Variables
 var startPage = document.querySelector("#startpage");
 var quizHead = document.querySelector(".quizhead");
 var startBtn = document.querySelector("#startBtn");
@@ -13,12 +14,12 @@ var submitBtn = document.querySelector("#submissionbtn");
 var highScorePage = document.querySelector("#highscorepage");
 var arrNum = 0;
 var timeLeft= document.querySelector("#timeleft");
-
+//Hides extraneous cards to start
 questionPage.style.display = "none"
 postGamePage.style.display = "none"
 highScorePage.style.display = "none"
 
-
+//Question and answers array
 
 const questionArr = [
     {
@@ -66,7 +67,7 @@ const questionArr = [
         correctAnswer: "Basketball",
       },
     ];
-
+//Starts the quiz
 startBtn.addEventListener ("click", startQuiz);
 
 function startQuiz(){
@@ -76,6 +77,7 @@ function startQuiz(){
     questionRender();
     // qTime();
 }
+//Populates question and answers in HTML
 function questionRender() {
     question.textContent = questionArr[arrNum].question;
     answer1.textContent = questionArr[arrNum].answer1;
@@ -84,7 +86,7 @@ function questionRender() {
     answer4.textContent = questionArr[arrNum].answer4;
     correctAnswer = questionArr[arrNum].correctAnswer;
   }
-
+// Attempt to add scoring 
 //   answers.addEventListener("click", function(event){
 //       var userAnswer = event.target;
 //       if (userAnswer == correctAnswer) {
@@ -99,7 +101,7 @@ function questionRender() {
 //   }
 //   )
 
-  
+  // AAttempt to countdown 
 // function countdown() {
   
 //     var timeInterval = setInterval(function () {
