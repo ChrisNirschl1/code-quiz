@@ -1,23 +1,34 @@
 //Called Variables
-var startPage = document.querySelector("#startpage");
-var quizHead = document.querySelector(".quizhead");
-var startBtn = document.querySelector("#startBtn");
-var questionPage = document.querySelector (".questionpage");
-var question = document.querySelector (".question");
-var answer1 = document.querySelector(".answer1");
-var answer2 = document.querySelector(".answer2");
-var answer3 = document.querySelector(".answer3");
-var answer4 = document.querySelector(".answer4");
-var postGamePage = document.querySelector("#postgamepage");
-var score = document.querySelector("#score");
-var submitBtn = document.querySelector("#submissionbtn");
-var highScorePage = document.querySelector("#highscorepage");
-var arrNum = 0;
-var timeLeft= document.querySelector("#timeleft");
+// var startPage = document.querySelector("#startpage");
+// var quizHead = document.querySelector(".quizhead");
+// var startBtn = document.querySelector("#startBtn");
+// var questionPage = document.querySelector (".questionpage");
+// var question = document.querySelector (".question");
+// var answer1 = document.querySelector(".answer1");
+// var answer2 = document.querySelector(".answer2");
+// var answer3 = document.querySelector(".answer3");
+// var answer4 = document.querySelector(".answer4");
+// var postGamePage = document.querySelector("#postgamepage");
+// var score = document.querySelector("#score");
+// var submitBtn = document.querySelector("#submissionbtn");
+// var highScorePage = document.querySelector("#highscorepage");
+let header = document.querySelector(".header");
+let intro = document.querySelector("#intro");
+let main = document.querySelector(".main");
+let startBtn = document.querySelector("#startbtn");
+let options = document.querySelector("#options");
+let question = document.querySelector("#question")
+let ans1 = document.querySelector("#ans1");
+let ans2 = document.querySelector("#ans2");
+let ans3 = document.querySelector("#ans3");
+let ans4 = document.querySelector("#ans4");
+let timer = document.querySelector ("#timer");
+let index = 0;
+let timeLeft= document.querySelector("#timeleft");
 //Hides extraneous cards to start
-questionPage.style.display = "none"
-postGamePage.style.display = "none"
-highScorePage.style.display = "none"
+// questionPage.style.display = "none"
+// postGamePage.style.display = "none"
+// highScorePage.style.display = "none"
 
 //Question and answers array
 
@@ -71,21 +82,36 @@ const questionArr = [
 startBtn.addEventListener ("click", startQuiz);
 
 function startQuiz(){
-    console.log("start the quiz");
-    startPage.style.display = "none";
-    questionPage.style.display = "initial";
-    questionRender();
-    // qTime();
-}
-//Populates question and answers in HTML
-function questionRender() {
-    question.textContent = questionArr[arrNum].question;
-    answer1.textContent = questionArr[arrNum].answer1;
-    answer2.textContent = questionArr[arrNum].answer2;
-    answer3.textContent = questionArr[arrNum].answer3;
-    answer4.textContent = questionArr[arrNum].answer4;
-    correctAnswer = questionArr[arrNum].correctAnswer;
+  if (questionArr[index] > questionArr.length) {
+        
+  } else {
+  question.innerHTML = questionArr[index].question;
+  ans1.innerHTML = questionArr[index].answer1;
+  ans2.innerHTML = questionArr[index].answer2;
+  ans3.innerHTML = questionArr[index].answer3;
+  ans4.innerHTML = questionArr[index].answer4;
   }
+}
+
+ans1.addEventListener("click", checkAnswer);
+ans2.addEventListener("click", checkAnswer);
+ans3.addEventListener("click", checkAnswer);
+ans4.addEventListener("click", checkAnswer);
+
+function checkAnswer(event){
+  if (questionArr[index].correct == event.target.innerHTML){
+    console.log("correct")
+  }else{
+    console.log("wrong");
+  }
+  index++
+  startQuiz();
+}
+
+
+
+
+  
 // Attempt to add scoring 
 //   answers.addEventListener("click", function(event){
 //       var userAnswer = event.target;
@@ -122,3 +148,6 @@ function questionRender() {
 //       }
 //     }, 1200);
 //   }
+
+
+// Put an event listener on each button, have it run a function to check true/false
