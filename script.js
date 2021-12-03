@@ -23,9 +23,10 @@ let ans2 = document.querySelector("#ans2");
 let ans3 = document.querySelector("#ans3");
 let ans4 = document.querySelector("#ans4");
 let timer = document.querySelector ("#timer");
+let scoring = document.querySelector('#scoring');
 let index = 0;
 let ansCount = 1;
-let secondsLeft = 20;
+let secondsLeft = 15;
 let timeLeft= document.querySelector("#timeleft");
 
 
@@ -70,11 +71,11 @@ const questionArr = [
     
       {
         question: "Last major Championship?",
-        answer1: "Baseball",
+        answer1: "Hockey",
         answer2: "Football",
-        answer3: "Hockey",
+        answer3: "Baseball",
         answer4: "Basketball",
-        correctAnswer: "Basketball",
+        correctAnswer: "Baseball",
       },
     ];
 //Starts the quiz
@@ -89,8 +90,9 @@ setInterval(function () {
     if (secondsLeft > 0) {
       
     }else{
-      console.log("finishing")
-      document.location.reload();
+      console.log("fin")
+      // document.location.reload();
+      window.alert("All done!");
     }
   }, 1000);
 }
@@ -121,6 +123,7 @@ function checkAnswer(event){
   if (questionArr[index].correctAnswer == event.target.textContent){
     console.log("correct")
     console.log(ansCount ++);
+    ansCount ++
 
   
   }else{
@@ -134,8 +137,10 @@ function checkAnswer(event){
 
 
 function postScore (){
-  if (questionArr[index] > questionArr.length) {
+  if (secondsLeft == 0) {
     console.log("Finished!");
+    scoring.append(ansCount)
+
   } else {
     console.log("close");
   }
