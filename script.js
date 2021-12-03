@@ -24,11 +24,10 @@ let ans3 = document.querySelector("#ans3");
 let ans4 = document.querySelector("#ans4");
 let timer = document.querySelector ("#timer");
 let index = 0;
+let ansCount = 1;
+let secondsLeft = 20;
 let timeLeft= document.querySelector("#timeleft");
-//Hides extraneous cards to start
-// questionPage.style.display = "none"
-// postGamePage.style.display = "none"
-// highScorePage.style.display = "none"
+
 
 //Question and answers array
 
@@ -70,7 +69,7 @@ const questionArr = [
       },
     
       {
-        question: "Last major chip?",
+        question: "Last major Championship?",
         answer1: "Baseball",
         answer2: "Football",
         answer3: "Hockey",
@@ -80,16 +79,35 @@ const questionArr = [
     ];
 //Starts the quiz
 startBtn.addEventListener ("click", startQuiz);
+startBtn.addEventListener ("click", startTimer);
+
+
+function startTimer(){
+setInterval(function () {
+    secondsLeft--;
+    timer.textContent = secondsLeft;
+    if (secondsLeft > 0) {
+      
+    }else{
+      console.log("finishing")
+      document.location.reload();
+    }
+  }, 1000);
+}
 
 function startQuiz(){
+  // setInterval(function () {
+  //   secondsLeft--;
+  //   timer.textContent = secondsLeft
+  // }, 1000);
   if (questionArr[index] > questionArr.length) {
-        
+    alert("Game Over");
   } else {
-  question.innerHTML = questionArr[index].question;
-  ans1.innerHTML = questionArr[index].answer1;
-  ans2.innerHTML = questionArr[index].answer2;
-  ans3.innerHTML = questionArr[index].answer3;
-  ans4.innerHTML = questionArr[index].answer4;
+  question.textContent = questionArr[index].question;
+  ans1.textContent = questionArr[index].answer1;
+  ans2.textContent = questionArr[index].answer2;
+  ans3.textContent = questionArr[index].answer3;
+  ans4.textContent = questionArr[index].answer4;
   }
 }
 
@@ -98,11 +116,19 @@ ans2.addEventListener("click", checkAnswer);
 ans3.addEventListener("click", checkAnswer);
 ans4.addEventListener("click", checkAnswer);
 
+
 function checkAnswer(event){
-  if (questionArr[index].correct == event.target.innerHTML){
+  console.log(questionArr[index].correctAnswer == event.target.textContent);
+  console.log(event.target.textContent);
+  console.log(questionArr[index].correctAnswer);
+  if (questionArr[index].correctAnswer == event.target.textContent){
     console.log("correct")
+    console.log(ansCount ++);
+
+  
   }else{
     console.log("wrong");
+    secondsLeft --
   }
   index++
   startQuiz();
@@ -110,44 +136,16 @@ function checkAnswer(event){
 
 
 
+function postScore (){
+  if (questionArr[index] > questionArr.length) {
+    console.log("I finished!");
+  } else {
+    console.log("I'm getting closer");
+  }
+
+}
+
+postScore();
+
 
   
-// Attempt to add scoring 
-//   answers.addEventListener("click", function(event){
-//       var userAnswer = event.target;
-//       if (userAnswer == correctAnswer) {
-//           arrNum++;
-//           console.log ("correct");
-//           if (arrNum<questionArr.length){
-//               else {
-//                   timerCount = timerCount - 12
-//               }
-//           }
-//       }
-//   }
-//   )
-
-  // AAttempt to countdown 
-// function countdown() {
-  
-//     var timeInterval = setInterval(function () {
-//       if (timeLeft > 1) {
-        
-//         time.textContent = timeLeft + ' seconds remaining';
-//         timeLeft--;
-//       } else if (timeLeft === 1) {
-//         // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
-//         timer.textContent = timeLeft + ' second remaining';
-//         timeLeft--;
-//       } else {
-//         // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-//         timertime.textContent = '';
-       
-//         clearInterval(timeInterval);
-        
-//       }
-//     }, 1200);
-//   }
-
-
-// Put an event listener on each button, have it run a function to check true/false
