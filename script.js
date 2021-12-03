@@ -96,10 +96,7 @@ setInterval(function () {
 }
 
 function startQuiz(){
-  // setInterval(function () {
-  //   secondsLeft--;
-  //   timer.textContent = secondsLeft
-  // }, 1000);
+  
   if (questionArr[index] > questionArr.length) {
     alert("Game Over");
   } else {
@@ -110,13 +107,13 @@ function startQuiz(){
   ans4.textContent = questionArr[index].answer4;
   }
 }
-
+//event listeners to track answer
 ans1.addEventListener("click", checkAnswer);
 ans2.addEventListener("click", checkAnswer);
 ans3.addEventListener("click", checkAnswer);
 ans4.addEventListener("click", checkAnswer);
 
-
+//function called by button clicks above
 function checkAnswer(event){
   console.log(questionArr[index].correctAnswer == event.target.textContent);
   console.log(event.target.textContent);
@@ -138,9 +135,9 @@ function checkAnswer(event){
 
 function postScore (){
   if (questionArr[index] > questionArr.length) {
-    console.log("I finished!");
+    console.log("Finished!");
   } else {
-    console.log("I'm getting closer");
+    console.log("close");
   }
 
 }
