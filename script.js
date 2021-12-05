@@ -43,30 +43,30 @@ const questionArr = [
   },
 
   {
-    question: "Best Team?",
-    answer1: "Pats",
-    answer2: "Colts",
-    answer3: "Jags",
-    answer4: "Eagles",
-    correctAnswer: "Pats",
+    question: "Who won the 2021 World Series?",
+    answer1: "Yankees",
+    answer2: "Red Sox",
+    answer3: "Braves",
+    answer4: "Rangers",
+    correctAnswer: "Braves",
   },
 
   {
-    question: "Best Player?",
-    answer1: "Lebron",
-    answer2: "MJ",
-    answer3: "Kobe",
-    answer4: "Tatum",
-    correctAnswer: "Lebron",
+    question: "Who won 2021 Champions League?",
+    answer1: "Man City",
+    answer2: "Chelsea",
+    answer3: "Liverpool",
+    answer4: "Arsenal",
+    correctAnswer: "Chelsea",
   },
 
   {
-    question: "Best Team?",
-    answer1: "Celts",
-    answer2: "Yanks",
-    answer3: "Titans",
-    answer4: "Archers",
-    correctAnswer: "Celts",
+    question: "What accent does Brian Kelly have?",
+    answer1: "English",
+    answer2: "Southern",
+    answer3: "Northern",
+    answer4: "Silicon Valley",
+    correctAnswer: "Southern",
   },
 
   {
